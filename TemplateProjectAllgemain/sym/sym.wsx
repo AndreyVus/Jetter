@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WORKSPACE_OPTIONS>
+  <Version>1_0</Version>
+  <Projects>
+    <ActiveProject>sym</ActiveProject>
+    <Project>
+      <Name>sym</Name>
+      <ActiveConfiguration>Release</ActiveConfiguration>
+      <Configurations>
+        <Configuration>
+          <Name>Release</Name>
+          <ForceRebuild>1</ForceRebuild>
+          <AxesVerified>1</AxesVerified>
+          <CreateDAFile>0</CreateDAFile>
+          <DownloadDAFile>0</DownloadDAFile>
+          <CreateExportFile>0</CreateExportFile>
+          <MonitorTask>0</MonitorTask>
+          <DataDump>
+            <CurrentGroupName />
+            <ApplyChanges>1</ApplyChanges>
+            <DownloadFilename />
+            <UploadFilename />
+            <OverwriteExisting>1</OverwriteExisting>
+            <ForceOldDAFormat>0</ForceOldDAFormat>
+            <OpenDocumentAfterUpload>1</OpenDocumentAfterUpload>
+          </DataDump>
+        </Configuration>
+      </Configurations>
+    </Project>
+  </Projects>
+  <Breakpoints />
+  <Bookmarks />
+  <ChildFrames />
+  <ExpandedTreenodes>
+    <Treenode>
+      <Location>sym</Location>
+    </Treenode>
+    <Treenode>
+      <Location>sym/Library</Location>
+    </Treenode>
+  </ExpandedTreenodes>
+  <ExpandedTreeNodesHWM>
+    <Location>sym System</Location>
+    <Location>sym System/Release</Location>
+    <Location>sym System/Release/Hardware</Location>
+    <Location>sym System/Release/Hardware/Network</Location>
+    <Location>sym System/Release/Hardware/Network/JVM-104</Location>
+  </ExpandedTreeNodesHWM>
+</WORKSPACE_OPTIONS>

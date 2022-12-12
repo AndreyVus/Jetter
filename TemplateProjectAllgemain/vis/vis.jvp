@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JetView-Project ProductVersion="5.5.1.4367" PlatformID="11" Flags="0" StartPage=".\hmi_Logo.jvi" StartPageExtended="" NeedsWorkingSet="1" NeedsStartPage="1">
+  <Item NodeName="Languages" guid="6c5a96fe-a2db-4cf7-adec-dd5ff25468a4" />
+  <Item NodeName="Resources" guid="8d59607e-4da1-41ba-929f-61dec947b372">
+    <Item Path=".\JVER.jrc" guid="64d579f9-54bc-49b5-8516-f03fb777cd4b" Flags="0" ResourceNamespace="JVER" ResourceFileType="System Resource" />
+  </Item>
+  <Item NodeName="Visualisation" guid="09425273-ed60-420b-8df7-d2efc645b883">
+    <Item Path=".\Application.jvi" guid="f95e5ec9-8d6c-42e2-ad84-a634a31d54dd" Flags="0" />
+    <Item Path=".\hmi_Logo.jvi" guid="ef4008cb-281f-4a98-bdc1-4b298f683f4e" Flags="0" />
+    <Item Path=".\hmi_settings.jvi" guid="e383107e-ad28-4271-9328-6df496e74fff" Flags="0" />
+    <Item Path=".\hmi_aus.jvi" guid="6a9cdaa1-e0e5-4959-b40c-cc8c4cd0db64" Flags="0" />
+    <Item Path=".\hmi_1003.jvi" guid="790b637f-9740-4d04-9d4e-f2f7839e1e04" Flags="0" />
+  </Item>
+</JetView-Project>

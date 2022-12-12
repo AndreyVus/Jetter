@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WinSym-ProjectInformation ProductVersion="5.7.0.5265">
+	<!--** DO NOT EDIT **-->
+	<Files>
+		<File IsGroup="1">
+			<Name>System Files</Name>
+			<SystemGroup>1</SystemGroup>
+			<DocumentType>26</DocumentType>
+			<File>
+				<Name>..\..\..\..\..\..\Program Files (x86)\Jetter\JetSym 5.7.0\Platforms\Platforms.stxp</Name>
+			</File>
+		</File>
+		<File IsGroup="1">
+			<Name>External Dependencies</Name>
+			<SystemGroup>1</SystemGroup>
+			<DocumentType>25</DocumentType>
+			<File>
+				<Name>..\..\..\..\..\..\Program Files (x86)\Jetter\JetSym 5.7.0\Platforms\JVMC02API.stxp</Name>
+			</File>
+			<File>
+				<Name>..\..\..\..\..\..\Program Files (x86)\Jetter\JetSym 5.7.0\Platforms\StdSysAPI.stxp</Name>
+			</File>
+			<File>
+				<Name>..\..\..\..\..\..\Program Files (x86)\Jetter\JetSym 5.7.0\Platforms\CanOpenAPI.stxp</Name>
+			</File>
+			<File>
+				<Name>..\..\..\..\..\..\Program Files (x86)\Jetter\JetSym 5.7.0\Platforms\SAEJ1939API.stxp</Name>
+			</File>
+			<File>
+				<Name>..\..\..\..\..\..\Program Files (x86)\Jetter\JetSym 5.7.0\Platforms\SwapEndianAPI.stxp</Name>
+			</File>
+			<File>
+				<Name>..\vis\STX\VisualInterface.stxp</Name>
+			</File>
+		</File>
+	</Files>
+</WinSym-ProjectInformation>

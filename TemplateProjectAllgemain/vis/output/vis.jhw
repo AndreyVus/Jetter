@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JetViewSoft-Hardware-Tree>
+  <HardwareList>
+    <Hardware Name="Display104-8" ServiceID=".\JVM104 8-Tasten\JVM104_8Tasten.xml" guid="e80ec6cc-d576-4c17-a940-bf6cdbe5771b" />
+  </HardwareList>
+  <ExternalDataSources>
+    <OpcUaConnections />
+  </ExternalDataSources>
+  <Cameras />
+</JetViewSoft-Hardware-Tree>

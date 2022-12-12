@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JetView-Resource ProductVersion="5.0.0.0" ResourceFileType="System Resource">
+    <Languages>
+        <Language Name="German" Code="de" LocaleId="0" Default="False" />
+        <Language Name="English" Code="en" LocaleId="1" Default="True" />
+    </Languages>
+    <Resources>
+        <Resource ID="ID_YES" Type="TEXT" MaxLength="">
+            <Text>Ja</Text>
+            <Text>Yes</Text>
+        </Resource>
+        <Resource ID="ID_NO" Type="TEXT" MaxLength="">
+            <Text>Nein</Text>
+            <Text>No</Text>
+        </Resource>
+        <Resource ID="ID_ABORT" Type="TEXT" MaxLength="">
+            <Text>Abbrechen</Text>
+            <Text>Abort</Text>
+        </Resource>
+        <Resource ID="ID_RETRY" Type="TEXT" MaxLength="">
+            <Text>Wiederholen</Text>
+            <Text>Retry</Text>
+        </Resource>
+        <Resource ID="ID_IGNORE" Type="TEXT" MaxLength="">
+            <Text>Ignorieren</Text>
+            <Text>Ignore</Text>
+        </Resource>
+        <Resource ID="ID_CLOSE" Type="TEXT" MaxLength="">
+            <Text>Schließen</Text>
+            <Text>Close</Text>
+        </Resource>
+        <Resource ID="ID_DISCARD" Type="TEXT" MaxLength="">
+            <Text>Verwerfen</Text>
+            <Text>Discard</Text>
+        </Resource>
+        <Resource ID="ID_APPLY" Type="TEXT" MaxLength="">
+            <Text>Übernehmen</Text>
+            <Text>Apply</Text>
+        </Resource>
+        <Resource ID="ID_ADD" Type="TEXT" MaxLength="">
+            <Text>Hinzufügen</Text>
+            <Text>Add</Text>
+        </Resource>
+        <Resource ID="ID_REMOVE" Type="TEXT" MaxLength="">
+            <Text>Entfernen</Text>
+            <Text>Remove</Text>
+        </Resource>
+        <Resource ID="ID_EDIT" Type="TEXT" MaxLength="">
+            <Text>Bearbeiten</Text>
+            <Text>Edit</Text>
+        </Resource>
+        <Resource ID="ID_CHANGE_USER" Type="TEXT" MaxLength="">
+            <Text>Benutzer wechseln</Text>
+            <Text>Change User</Text>
+        </Resource>
+        <Resource ID="ID_USER" Type="TEXT" MaxLength="">
+            <Text>Benutzer</Text>
+            <Text>User</Text>
+        </Resource>
+        <Resource ID="ID_USERLEVEL" Type="TEXT" MaxLength="">
+            <Text>Benutzerebene</Text>
+            <Text>User Level</Text>
+        </Resource>
+
+        <Resource ID="ID_CONFIRM_PASSWORD_LABEL" Type="TEXT" MaxLength="">
+            <Text>Kennwort\nwiederholen</Text>
+            <Text>Confirm\nPassword</Text>
+        </Resource>
+        <Resource ID="ID_CONFIRM_PASSWORD_TITLE" Type="TEXT" MaxLength="">
+            <Text>Kennwort wiederholen</Text>
+            <Text>Confirm Password</Text>
+        </Resource>
+
+        <Resource ID="ID_ALLOWEDUSERLEVELS" Type="TEXT" MaxLength="">
+            <Text>Erlaubte Benutzerebenen</Text>
+            <Text>Actual allowed levels</Text>
+        </Resource>
+        <Resource ID="ID_LEVEL_DESCRIPTION" Type="TEXT" MaxLength="">
+            <Text>Kommentar Benutzerebene</Text>
+            <Text>Level Description</Text>
+        </Resource>
+        <Resource ID="ID_DESCRIPTION" Type="TEXT" MaxLength="">
+            <Text>Kommentar</Text>
+            <Text>Description</Text>
+        </Resource>
+
+        <Resource ID="ID_VALIDATING_LEVEL" Type="TEXT" MaxLength="">
+            <Text>Benutzerebenen prüfen</Text>
+            <Text>Validating level</Text>
+        </Resource>
+
+        <Resource ID="ID_VALIDATING_DESCRIPTION" Type="TEXT" MaxLength="">
+            <Text>Kommentar prüfen</Text>
+            <Text>Validating description</Text>
+        </Resource>
+        <Resource ID="ID_THE_LEVEL_CANNOT_BE_EMPTY" Type="TEXT" MaxLength="">
+            <Text>Benutzerebene darf nicht leer sein</Text>
+            <Text>The level cannot be empty</Text>
+        </Resource>
+        <Resource ID="ID_DELETING_THE_USERLEVEL_IS_NOT_ALLOWED" Type="TEXT" MaxLength="">
+            <Text>Das Löschen von %1 - %s ist nicht erlaubt</Text>
+            <Text>Deleting the %1 - %s is not allowed</Text>
+        </Resource>
+        <Resource ID="ID_DELETING_THE_GUEST_LEVEL_IS_NOT_ALLOWED" Type="TEXT" MaxLength="">
+            <Text>Das Löschen der Gastbenutzerebene ist nicht erlaubt</Text>
+            <Text>Deleting the Guest level is not allowed</Text>
+        </Resource>
+        <Resource ID="ID_INVALID_LEVEL" Type="TEXT" MaxLength="">
+            <Text>Ungültige Benutzerebene</Text>
+            <Text>Invalid level</Text>
+        </Resource>
+        <Resource ID="ID_CANNOT_REMOVE_LEVEL" Type="TEXT" MaxLength="">
+            <Text>Benutzerebene kann nicht gelöscht werden</Text>
+            <Text>Cannot remove level</Text>
+        </Resource>
+        <Resource ID="ID_THE_LEVEL_MUST_BE_GREATER_OR_EQUAL_TO_0_AND_LESS_THAN_256" Type="TEXT" MaxLength="">
+            <Text>Die Benutzerebene muss zwischen 1 und 254 liegen</Text>
+            <Text>The level must be greater or equal to 1 and less than 254</Text>
+        </Resource>
+        <Resource ID="ID_IT_IS_NOT_ALLOWED_TO_CHANGE_TO_A_HIGHER_OR_THE_SAME_LEVEL_THEN_THE_ACTIVE_USER" Type="TEXT" MaxLength="">
+            <Text>Es ist nicht erlaubt auf eine höhere oder die gleiche Benutzerebene als die des aktiven Benutzers zu wechseln</Text>
+            <Text>It is not allowed to change to a higher or the same level then the active user</Text>
+        </Resource>
+        <Resource ID="ID_IT_IS_NOT_ALLOWED_TO_INSERT_A_HIGHER_OR_THE_SAME_LEVEL_THEN_THE_ACTIVE_USER" Type="TEXT" MaxLength="">
+            <Text>Es ist nicht erlaubt eine höhere oder die gleiche Benutzereben als die aktive Benutzereben einzufügen</Text>
+            <Text>It is not allowed to insert a higher or the same level then the active user</Text>
+        </Resource>
+        <Resource ID="ID_THIS_LEVEL_IS_ALREADY_IN_USE" Type="TEXT" MaxLength="">
+            <Text>Diese Benutzerebene wird bereits verwendet</Text>
+            <Text>This level is already in use</Text>
+        </Resource>
+        <Resource ID="ID_THE_LEVEL_DESCRIPTION_CANNOT_BE_EMPTY" Type="TEXT" MaxLength="">
+            <Text>Der Kommentar zur Benutzerebene darf nicht leer sein</Text>
+            <Text>The level description cannot be empty</Text>
+        </Resource>
+        <Resource ID="ID_THE_LEVEL_IS_ALREADY_USED" Type="TEXT" MaxLength="">
+            <Text>Die Benutzerebene wird bereits verwendet</Text>
+            <Text>The level is already used</Text>
+        </Resource>
+
+        <Resource ID="ID_UNKNOWN_ERROR" Type="TEXT" MaxLength="">
+            <Text>Unbekannter Fehler</Text>
+            <Text>Unknown Error</Text>
+        </Resource>
+        <Resource ID="ID_NOT_THE_SAME_PASSWORDS" Type="TEXT" MaxLength="">
+            <Text>Kennwörter stimmen nicht überein!</Text>
+            <Text>Not the same passwords!</Text>
+        </Resource>
+        <Resource ID="ID_MISSING_USER_NAME" Type="TEXT" MaxLength="">
+            <Text>Benutzername fehlt</Text>
+            <Text>Missing User Name</Text>
+        </Resource>
+        <Resource ID="ID_A_USER_MUST_HAVE_A_NAME" Type="TEXT" MaxLength="">
+            <Text>Ein Benutzer muss einen Namen besitzen.</Text>
+            <Text>A User must have a name.</Text>
+        </Resource>
+        <Resource ID="ID_DUPLICATE_NAME" Type="TEXT" MaxLength="">
+            <Text>Doppelter Name</Text>
+            <Text>Duplicate Name</Text>
+        </Resource>
+        <Resource ID="ID_DUPLICATE_NAME2" Type="TEXT" MaxLength="">
+            <Text>Doppelter Name \nDer Benutzer '%1' existiert bereits</Text>
+            <Text>Duplicate Name \nThe user '%1' exists already</Text>
+        </Resource>
+        <Resource ID="ID_THE_USER_EXISTS_ALREADY" Type="TEXT" MaxLength="">
+            <Text>Der Benutzer '%1' existiert bereits!</Text>
+            <Text>The User '%1' exists already!</Text>
+        </Resource>
+        <Resource ID="ID_KEYBOARD" Type="TEXT" MaxLength="">
+            <Text>Tastatur</Text>
+            <Text>Keyboard</Text>
+        </Resource>
+        <Resource ID="ID_NUMERIC_INPUT" Type="TEXT" MaxLength="">
+            <Text>Nummerische Eingabe</Text>
+            <Text>Numeric Input</Text>
+        </Resource>
+        <Resource ID="ID_CANNOT_CHANGE_DECIMAL_SIGN" Type="TEXT" MaxLength="">
+            <Text>Kann das Vorzeichen nicht ändern</Text>
+            <Text>Cannot Change Decimal Sign</Text>
+        </Resource>
+        <Resource ID="ID_THE_VALUE_ISNOT_NUMERIC" Type="TEXT" MaxLength="">
+            <Text>Der Wert ist kein Zahl</Text>
+            <Text>The value isn't numeric</Text>
+        </Resource>
+        <Resource ID="ID_ACTIVE_USER" Type="TEXT" MaxLength="">
+            <Text>Aktiver Benutzer</Text>
+            <Text>Active User</Text>
+        </Resource>
+        <Resource ID="ID_LEVEL_LIST" Type="TEXT" MaxLength="">
+            <Text>Liste der Benutzerebenen</Text>
+            <Text>Level List</Text>
+        </Resource>
+        <Resource ID="ID_USER_LIST" Type="TEXT" MaxLength="">
+            <Text>Liste der Benutzer</Text>
+            <Text>User List</Text>
+        </Resource>
+        <Resource ID="ID_CHANGE_GUEST" Type="TEXT" MaxLength="">
+            <Text>Wechseln zum Gastbenutzer</Text>
+            <Text>Change Guest</Text>
+        </Resource>
+        <Resource ID="ID_THE_GUEST_IS_A_SYSTEM_ACCOUNT_AND_CAN_NOT_BE_CHANGED" Type="TEXT" MaxLength="">
+            <Text>Der Gastbenutzer ist ein Systemkonto und kann nicht geändert werden!</Text>
+            <Text>The Guest is a system account and can not be changed!</Text>
+        </Resource>
+        <Resource ID="ID_CHANGE_ADMINISTRATOR" Type="TEXT" MaxLength="">
+            <Text>Wechseln zum Administrator</Text>
+            <Text>Change Administrator</Text>
+        </Resource>
+        <Resource ID="ID_THE_ADMINISTRATOR_IS_A_SYSTEM_ACCOUNT_AND_CAN_NOT_BE_CHANGED" Type="TEXT" MaxLength="">
+            <Text>Der Administrator ist ein Systemkonto und kann nicht geändert werden!</Text>
+            <Text>The Administrator is a system account and can not be changed!</Text>
+        </Resource>
+        <Resource ID="ID_CHANGE_USER_NAME" Type="TEXT" MaxLength="">
+            <Text>Benutzername ändern</Text>
+            <Text>Change UserName</Text>
+        </Resource>
+        <Resource ID="ID_REMOVE_USER" Type="TEXT" MaxLength="">
+            <Text>Benutzer entfernen</Text>
+            <Text>Remove User</Text>
+        </Resource>
+        <Resource ID="ID_THIS_USER_IS_CURRENTLY_LOGGED_IN_AND_CANNOT_BE_REMOVED" Type="TEXT" MaxLength="">
+            <Text>Der Benutzer ist gerade angemeldet und kann nicht entfernt werden.</Text>
+            <Text>This user is currently logged in and cannot be removed.</Text>
+        </Resource>
+        <Resource ID="ID_DO_YOUR_REALLY_WANT_TO_REMOVE_THE_USER" Type="TEXT" MaxLength="">
+            <Text>Möchten sie den Benutzer '%1' jetzt entfernen?</Text>
+            <Text>Do your really want to remove the user '%1'?</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_DIALOG_TITEL" Type="TEXT" MaxLength="">
+            <Text>Ungültige Eingabe!</Text>
+            <Text>Invalid Input!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_FLOAT" Type="TEXT" MaxLength="">
+            <Text>Ungültiger Wert: %2.3f!\nDer Wert muss zwischen %2.3f und %2.3f liegen!</Text>
+            <Text>Invalid value: %2.3f!\nThe value must be in the range from %2.3f to %2.3f!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_FLOAT_MUST_BE_MORE_THAN" Type="TEXT" MaxLength="">
+            <Text>Ungültiger Wert: %2.3f!\nDer Wert muss größer %2.3f sein!</Text>
+            <Text>Invalid value: %2.3f!\nThe value must be more than %2.3f!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_FLOAT_MUST_BE_LESS_THAN" Type="TEXT" MaxLength="">
+            <Text>Ungültiger Wert: %2.3f!\nDer Wert muss kleiner %2.3f sein!</Text>
+            <Text>Invalid value: %2.3f!\nThe value must be less than %2.3f!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_EMPTY_FLOAT" Type="TEXT" MaxLength="">
+            <Text>Bitte geben Sie einen Wert zwischen %2.3f und %2.3f ein!</Text>
+            <Text>Please type in a value between %2.3f and %2.3f!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_EMPTY_FLOAT_MUST_BE_MORE_THAN" Type="TEXT" MaxLength="">
+            <Text>Bitte geben Sie einen Wert größer als %2.3f ein!</Text>
+            <Text>Please type in a value more than %2.3f!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_EMPTY_FLOAT_MUST_BE_LESS_THAN" Type="TEXT" MaxLength="">
+            <Text>Bitte geben Sie einen Wert kleiner als %2.3f ein!</Text>
+            <Text>Please type in a value less than %2.3f!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_INT" Type="TEXT" MaxLength="">
+            <Text>Ungültiger Wert: %d!\nDer Wert muss zwischen %d und %d liegen!</Text>
+            <Text>Invalid value: %d!\nThe value must be in the range from %d to %d!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_INT_MUST_BE_MORE_THAN" Type="TEXT" MaxLength="">
+            <Text>Ungültiger Wert: %d!\nDer Wert muss größer %d sein!</Text>
+            <Text>Invalid value: %d!\nThe value must be more than %d!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_INT_MUST_BE_LESS_THAN" Type="TEXT" MaxLength="">
+            <Text>Ungültiger Wert: %d!\nDer Wert muss kleiner %d sein!</Text>
+            <Text>Invalid value: %d!\nThe value must be less than %d!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_EMPTY_INT" Type="TEXT" MaxLength="">
+            <Text>Bitte geben Sie einen Wert zwischen %d und %d ein!</Text>
+            <Text>Please type in a value between %d and %d!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_EMPTY_INT_MUST_BE_MORE_THAN" Type="TEXT" MaxLength="">
+            <Text>Bitte geben Sie einen Wert größer %d ein!</Text>
+            <Text>Please type in a value more than %d!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_EMPTY_INT_MUST_BE_LESS_THAN" Type="TEXT" MaxLength="">
+            <Text>Bitte geben Sie einen Wert kleiner %d ein!</Text>
+            <Text>Please type in a value less than %d!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID_TEXT_LEN" Type="TEXT" MaxLength="">
+            <Text>Ungültige Textlänge!\nDer Text darf maximal %d Zeichen lang sein!</Text>
+            <Text>Invalid string length!\nThe string length must be less then %d characters!</Text>
+        </Resource>
+        <Resource ID="ID_JVERSYS_INVALID" Type="TEXT" MaxLength="">
+            <Text>Geben Sie bitte einen gültigen Wert ein!</Text>
+            <Text>Please type in a valid value!</Text>
+        </Resource>
+        <Resource ID="ID_CONFIRM_WRITE_VALUE" Type="TEXT" MaxLength="">
+            <Text>Bestätigen</Text>
+            <Text>Confirm write value?</Text>
+        </Resource>
+        <Resource ID="ID_CAPTION_MSGBOX_OK" Type="TEXT" MaxLength="">
+            <Text>OK</Text>
+            <Text>OK</Text>
+        </Resource>
+        <Resource ID="ID_CAPTION_MSGBOX_CANCEL" Type="TEXT" MaxLength="">
+            <Text>Abbrechen</Text>
+            <Text>Cancel</Text>
+        </Resource>
+        <Resource ID="ID_CONFIRM_WRITE_TAG" Type="TEXT" MaxLength="">
+            <Text>Soll dieser Wert an die Steuerung gesendet werden?</Text>
+            <Text>Do You want to send this value to the controller?</Text>
+        </Resource>
+        <Resource ID="ID_LOGIN_TITLE" Type="TEXT" MaxLength="">
+            <Text>Benutzeranmeldung</Text>
+            <Text>Login</Text>
+        </Resource>
+        <Resource ID="ID_CAPTION_USERNAME" Type="TEXT" MaxLength="">
+            <Text>Benutzername</Text>
+            <Text>User Name</Text>
+        </Resource>
+        <Resource ID="ID_CAPTION_PASSWORD" Type="TEXT" MaxLength="">
+            <Text>Passwort</Text>
+            <Text>Password</Text>
+        </Resource>
+        <Resource ID="ID_JVER_UM_LOGIN_ERROR_TITLE" Type="TEXT" MaxLength="">
+            <Text>Anmeldefehler!</Text>
+            <Text>Login Error!</Text>
+        </Resource>
+        <Resource ID="ID_JVER_UM_ILLEGAL_NAME" Type="TEXT" MaxLength="">
+            <Text>Es muss ein Benutzername angegeben werden!</Text>
+            <Text>The user name must not be an empty string!</Text>
+        </Resource>
+        <Resource ID="ID_JVER_UM_USERUNKNOWN" Type="TEXT" MaxLength="">
+            <Text>Unbekannter Benutzername!</Text>
+            <Text>The user name entered is not in the user list!</Text>
+        </Resource>
+        <Resource ID="ID_JVER_UM_WRONG_PASSWORD" Type="TEXT" MaxLength="">
+            <Text>Falsches Passwort!</Text>
+            <Text>Wrong password!</Text>
+        </Resource>
+        <Resource ID="ID_JVER_UM_LOGIN_ERROR" Type="TEXT" MaxLength="">
+            <Text>Anmeldefehler</Text>
+            <Text>Login Error</Text>
+        </Resource>
+        <Resource ID="ID_JVER_UM_UNKNOWN_ERROR_IN_LOGIN" Type="TEXT" MaxLength="">
+            <Text>Unbekannter Fehler beim Login</Text>
+            <Text>Unknown error in login</Text>
+        </Resource>
+        <Resource ID="ID_ALARM_ACKNOWLEDGE_INFORMATION" Type="TEXT" MaxLength="">
+            <Text>Acknowledge Information</Text>
+            <Text>Acknowledge Information</Text>
+        </Resource>
+        <Resource ID="ID_ALARM_NEWACKINFO" Type="TEXT" MaxLength="">
+            <Text>New Ack. Info</Text>
+            <Text>New Ack. Info</Text>
+        </Resource>
+        <Resource ID="ID_ALARM_RESETTRIGGER" Type="TEXT" MaxLength="">
+            <Text>Reset Trigger</Text>
+            <Text>Reset Trigger</Text>
+        </Resource>
+        <Resource ID="ID_ALARM_EVENT" Type="TEXT" MaxLength="">
+            <Text>Alarm</Text>
+            <Text>Event</Text>
+        </Resource>
+        <Resource ID="ID_ALARM_UNKNOWN_EVENT" Type="TEXT" MaxLength="">
+            <Text>Unbekannter Alarm</Text>
+            <Text>Unknown Event</Text>
+        </Resource>
+        <Resource ID="ID_ALARM_WROTE" Type="TEXT" MaxLength="">
+            <Text>geschrieben</Text>
+            <Text>wrote</Text>
+        </Resource>
+        <Resource ID="ID_EDIT_LEVEL" Type="TEXT" MaxLength="">
+            <Text>Benutzerebene bearbeiten</Text>
+            <Text>Edit Level</Text>
+        </Resource>
+        <Resource ID="ID_ADD_LEVEL" Type="TEXT" MaxLength="">
+            <Text>Benutzerebene hinzufügen</Text>
+            <Text>Add Level</Text>
+        </Resource>
+        <Resource ID="ID_ADD_USER" Type="TEXT" MaxLength="">
+            <Text>Benutzer hinzufügen</Text>
+            <Text>Add User</Text>
+        </Resource>
+        <Resource ID="ID_EDIT_USER" Type="TEXT" MaxLength="">
+            <Text>Benutzer bearbeiten</Text>
+            <Text>Edit User</Text>
+        </Resource>
+
+        <Resource ID="ID_MODAL" Type="TEXT" MaxLength="">
+            <Text>modal</Text>
+            <Text>modal</Text>
+        </Resource>
+        <Resource ID="ID_NON_MODAL" Type="TEXT" MaxLength="">
+            <Text>nicht modal</Text>
+            <Text>non modal</Text>
+        </Resource>
+
+        <Resource ID="ID_DO_YOUR_REALLY_WANT_TO_REMOVE_THE_LEVEL" Type="TEXT" MaxLength="">
+            <Text>Möchten Sie den Benutzerlevel '%1 - %2' wirklich entfernen?</Text>
+            <Text>Do your really want to remove the level '%1 - %2'?</Text>
+        </Resource>
+
+        <Resource ID="ID_SYSTEM_ERROR_WITH_ERROR_CODE" Type="TEXT" MaxLength="">
+            <Text>Systemfehler (%1)</Text>
+            <Text>System error (%1)</Text>
+        </Resource>
+        <Resource ID="ID_ERROR_ADDING_USER" Type="TEXT" MaxLength="">
+            <Text>Fehler beim Hinzufügen eines Benutzers</Text>
+            <Text>Error adding user</Text>
+        </Resource>
+        <Resource ID="ID_THE_GUEST_CANNOT_BE_REMOVED" Type="TEXT" MaxLength="">
+            <Text>Der Gastbenutzer kann nicht entfernt werden! \nEr ist der Standardbenutzer</Text>
+            <Text>The Guest cannot be removed! \nIt's the default-user</Text>
+        </Resource>
+        <Resource ID="ID_YOU_CANNOT_REMOVE_ALL_ADMINISTRATORS" Type="TEXT" MaxLength="">
+            <Text>Sie können nicht alle Administratoren entfernen!</Text>
+            <Text>You cannot remove all Administrators!</Text>
+        </Resource>
+        <Resource ID="ID_LOADING_KEYBOARD_CONFIGURATION" Type="TEXT" MaxLength="">
+            <Text>Lade Tastatur Konfiguration</Text>
+            <Text>Loading Keyboard Configuration</Text>
+        </Resource>
+        <Resource ID="ID_INVALID_KEYBOARD_LAYOUT_FILE" Type="TEXT" MaxLength="">
+            <Text>ER hat eine Layoutdatei für die Eingabedialoge mit einer Version kleiner als %1 gefunden.\n Bitte aktualisieren sie das Layout auf Version %2 oder höher.</Text>
+            <Text>ER has found a Input-Dialog-Layout with a version less than %1.\nPlease update this layout to Version %2 or higher.</Text>
+        </Resource>
+        <Resource ID="ID_FILE_NOT_FOUND_WITH_PARAM" Type="TEXT" MaxLength="">
+            <Text>Datei nicht gefunden:\n%1</Text>
+            <Text>File not found:\n%1</Text>
+        </Resource>
+        <Resource ID="ID_COMMUNICATION_LIBRARIES_COULD_NOT_BE_LOADED" Type="TEXT" MaxLength="">
+            <Text>Bibliotheken für die Kommunikation konnten nicht geladen werden</Text>
+            <Text>Communication libraries could not be loaded</Text>
+        </Resource>
+        <Resource ID="ID_JVER_WARNING" Type="TEXT" MaxLength="">
+            <Text>ER: Warnung</Text>
+            <Text>ER: Warning</Text>
+        </Resource>
+        <Resource ID="ID_THERE_WERE_BUILD_ERRORS" Type="TEXT" MaxLength="">
+            <Text>Beim Erstellen sind Fehler aufgetreten. Die Anwendung läuft möglicherweise nicht wie erwartet.</Text>
+            <Text>There were build errors.\nProject may not run as expected.</Text>
+        </Resource>
+        <Resource ID="ID_THIS_PROJECT_WAS_CREATED_WITH_A_NEWER_VERSION_OF_JETVIEWSOFT" Type="TEXT" MaxLength="">
+            <Text>Das Project wurde mit einer neueren Version der Software erstellt. Sie läuft möglicherweise nicht wie erwartet.</Text>
+            <Text>This project was created with a newer version of the software.\nProject may not run as expected.</Text>
+        </Resource>
+        <Resource ID="ID_CALL_STX_FUNCTION_FAILED" Type="TEXT" MaxLength="">
+            <Text>Call STX function '%1' konnte nicht ausgeführt werden.</Text>
+            <Text>Call STX function '%1' failed.</Text>
+        </Resource>
+        <Resource ID="ID_LOGIN" Type="TEXT" MaxLength="">
+            <Text>Anmelden</Text>
+            <Text>Login</Text>
+        </Resource>
+        <Resource ID="ID_LOGOUT" Type="TEXT" MaxLength="">
+            <Text>Abmelden</Text>
+            <Text>Logout</Text>
+        </Resource>
+        <Resource ID="ID_ERROR_JET32_TRUNCATE_STRING" Type="TEXT" MaxLength="">
+            <Text>Die Texteingabe konnte nicht vollständig an den Controller übertragen werden. Die Eingabe wurde begrenzt auf %1 Zeichen.</Text>
+            <Text>Cannot write whole string-value to controller! It has been truncated to the max lenght of %1 charachters.</Text>
+        </Resource>
+        <Resource ID="ID_THE_LEVEL_IS_IN_USE_BY_OTHER_USERS" Type="TEXT" MaxLength="">
+            <Text>Benutzerebene wird von anderen Benutzern verwendet</Text>
+            <Text>The level is used by one or more users</Text>
+        </Resource>
+    </Resources>
+</JetView-Resource>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JetCompatibilityInfo ProductVersion="5.5.1.4367">
+  <!-- the ProductVersion-Attribute will be set from JVS at Runtime -->
+  <Items>
+    <Item Key="0">
+      The document was created with a higher program version.
+    </Item>
+    <!-- Sample Item -->
+    <Item Key="9999">
+      The current programm version is not able to store the new Object "MyNewObject".
+    </Item>
+  </Items>
+</JetCompatibilityInfo>

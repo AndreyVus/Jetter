@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WORKSPACE_OPTIONS>
+  <Version>1_0</Version>
+  <Projects>
+    <ActiveProject>sym</ActiveProject>
+    <Project>
+      <Name>sym</Name>
+      <ActiveConfiguration>Release</ActiveConfiguration>
+      <Configurations>
+        <Configuration>
+          <Name>Release</Name>
+          <ForceRebuild>0</ForceRebuild>
+          <AxesVerified>1</AxesVerified>
+          <CreateDAFile>0</CreateDAFile>
+          <DownloadDAFile>0</DownloadDAFile>
+          <CreateExportFile>0</CreateExportFile>
+          <MonitorTask>2</MonitorTask>
+          <DataDump>
+            <CurrentGroupName />
+            <ApplyChanges>1</ApplyChanges>
+            <DownloadFilename />
+            <UploadFilename />
+            <OverwriteExisting>0</OverwriteExisting>
+            <ForceOldDAFormat>0</ForceOldDAFormat>
+            <OpenDocumentAfterUpload>1</OpenDocumentAfterUpload>
+          </DataDump>
+        </Configuration>
+      </Configurations>
+    </Project>
+  </Projects>
+  <Breakpoints />
+  <Bookmarks />
+  <ChildFrames>
+    <Document>
+      <ViewFrame>
+        <DocPathName>.\sym\init.stxp</DocPathName>
+        <WindowPlacement>MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAADAAAAAAADAFAAAAALJDAAAAA</WindowPlacement>
+        <ViewScrollHoriz>0</ViewScrollHoriz>
+        <ViewScrollVert>0</ViewScrollVert>
+        <Line>23</Line>
+        <Column>0</Column>
+      </ViewFrame>
+    </Document>
+    <Document>
+      <ViewFrame>
+        <DocPathName>.\sym\ClassSettings.stxp</DocPathName>
+        <WindowPlacement>MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAADAAAAAAADAFAAAAALJDAAAAA</WindowPlacement>
+        <ViewScrollHoriz>0</ViewScrollHoriz>
+        <ViewScrollVert>180</ViewScrollVert>
+        <IsActiveChildFrame>1</IsActiveChildFrame>
+        <Line>184</Line>
+        <Column>41</Column>
+      </ViewFrame>
+    </Document>
+    <Document>
+      <ViewFrame>
+        <DocPathName>.\sym\visu.stxp</DocPathName>
+        <WindowPlacement>MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAADAAAAAAADAFAAAAALJDAAAAA</WindowPlacement>
+        <ViewScrollHoriz>0</ViewScrollHoriz>
+        <ViewScrollVert>0</ViewScrollVert>
+        <Line>71</Line>
+        <Column>2</Column>
+      </ViewFrame>
+    </Document>
+    <Document>
+      <ViewFrame>
+        <DocPathName>.\sym\main.stxp</DocPathName>
+        <WindowPlacement>MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAADAAAAAAADAFAAAAALJDAAAAA</WindowPlacement>
+        <ViewScrollHoriz>0</ViewScrollHoriz>
+        <ViewScrollVert>0</ViewScrollVert>
+        <Line>25</Line>
+        <Column>43</Column>
+      </ViewFrame>
+    </Document>
+    <Document>
+      <ViewFrame>
+        <DocPathName>.\sym\sym.stxs</DocPathName>
+        <WindowPlacement>MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAADAAAAAAADAFAAAAALJDAAAAA</WindowPlacement>
+        <ViewScrollHoriz>1</ViewScrollHoriz>
+        <ViewScrollVert>1</ViewScrollVert>
+        <Row>3</Row>
+        <Column>3</Column>
+        <SelectionStartChar>0</SelectionStartChar>
+        <SelectionEndChar>0</SelectionEndChar>
+      </ViewFrame>
+    </Document>
+    <Document>
+      <ViewFrame>
+        <DocPathName>HWM:sym System\Release\Hardware\Network\JVM-104\CPU</DocPathName>
+        <WindowPlacement>MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPDAAAAAAADAAAAAAADAFAAAAALJDAAAAA</WindowPlacement>
+        <ViewScrollHoriz>0</ViewScrollHoriz>
+        <ViewScrollVert>0</ViewScrollVert>
+        <Project>sym</Project>
+        <Config>Release</Config>
+        <MDIWindowID>CPU</MDIWindowID>
+        <AxisKey />
+        <Setup>0</Setup>
+        <ModuleID>M529</ModuleID>
+        <HwNodeIndex>0_0</HwNodeIndex>
+        <BusNodeID />
+        <IsPubSubModule>0</IsPubSubModule>
+        <SplitterPos>237</SplitterPos>
+      </ViewFrame>
+    </Document>
+  </ChildFrames>
+  <ExpandedTreenodes>
+    <Treenode>
+      <Location>sym</Location>
+    </Treenode>
+    <Treenode>
+      <Location>sym/Program</Location>
+    </Treenode>
+    <Treenode>
+      <Location>sym/Program/Include</Location>
+    </Treenode>
+    <Treenode>
+      <Location>sym/Setup</Location>
+    </Treenode>
+    <Treenode>
+      <Location>sym/Library/Visualisation_Library_JVER-STX_4.0.0.6.libdesc</Location>
+    </Treenode>
+  </ExpandedTreenodes>
+  <ExpandedTreeNodesHWM>
+    <Location>sym System</Location>
+    <Location>sym System/Release</Location>
+    <Location>sym System/Release/Hardware</Location>
+    <Location>sym System/Release/Hardware/Network</Location>
+    <Location>sym System/Release/Hardware/Network/JVM-104</Location>
+  </ExpandedTreeNodesHWM>
+</WORKSPACE_OPTIONS>

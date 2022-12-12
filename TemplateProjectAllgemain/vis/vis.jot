@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<JetView-ObjectTemplates Version="2.0">
+  <NumberRange MinUserValue="0" MaxUserValue="65534" NULL="65535" />
+  <Templates>
+    <Template TypeName="WorkingSet" StartID="0" MaxID="65534" FmtStr="Application" Hidden="0" ReadOnly="0" />
+    <Template TypeName="DataMask" StartID="1000" MaxID="65534" FmtStr="DataMask_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="SoftKeyMask" StartID="1500" MaxID="65534" FmtStr="SoftKeyMask_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Line" StartID="2000" MaxID="65534" FmtStr="Line_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Rectangle" StartID="3000" MaxID="65534" FmtStr="Rectangle_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Ellipse" StartID="4000" MaxID="65534" FmtStr="Ellipse_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Polygon" StartID="5000" MaxID="65534" FmtStr="Polygon_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Text" StartID="8000" MaxID="65534" FmtStr="Text_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Image" StartID="9000" MaxID="65534" FmtStr="[File Name]_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Button" StartID="10000" MaxID="65534" FmtStr="Button_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Edit" StartID="11000" MaxID="65534" FmtStr="Edit_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Checkbox" StartID="12000" MaxID="65534" FmtStr="Checkbox_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Listbox" StartID="13000" MaxID="65534" FmtStr="Listbox_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Combobox" StartID="14000" MaxID="65534" FmtStr="Combobox_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Group" StartID="16000" MaxID="65534" FmtStr="Group_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="XYGraph" StartID="18000" MaxID="65534" FmtStr="XYGraph_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Frame" StartID="17000" MaxID="65534" FmtStr="Frame_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Grid" StartID="19000" MaxID="65534" FmtStr="Grid_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Meter" StartID="20000" MaxID="65534" FmtStr="Meter_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="MeterEx" StartID="28000" MaxID="65534" FmtStr="MeterEx_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Arc" StartID="21000" MaxID="65534" FmtStr="Arc_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="Macro" StartID="23000" MaxID="65534" FmtStr="Macro_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="FontAttributes" StartID="24000" MaxID="65534" FmtStr="FontAttributes_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="LineAttributes" StartID="25000" MaxID="65534" FmtStr="LineAttributes_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="FillAttributes" StartID="26000" MaxID="65534" FmtStr="FillAttributes_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="ObjectPointer" StartID="27000" MaxID="65534" FmtStr="ObjectPointer_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="AlarmControl" StartID="29000" MaxID="65534" FmtStr="AlarmControl_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="VideoControl" StartID="29000" MaxID="65534" FmtStr="VideoControl_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="SoftKey" StartID="31000" MaxID="65534" FmtStr="SoftKey_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="BoolVariable" StartID="42000" MaxID="65534" FmtStr="BoolVariable_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="NumberVariable" StartID="40000" MaxID="65534" FmtStr="NumberVariable_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="StringVariable" StartID="41000" MaxID="65534" FmtStr="StringVariable_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="ArrayVariable" StartID="43000" MaxID="65534" FmtStr="ArrayVariable_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="StructVariable" StartID="44000" MaxID="65534" FmtStr="StructVariable_%ld" Hidden="0" ReadOnly="0" />
+    <Template TypeName="IDsForTemporaryUse" StartID="64000" MaxID="65534" FmtStr="IDsForTemporaryUse_%ld" Hidden="1" ReadOnly="0" />
+    <Template TypeName="Proxy" StartID="4194304" MaxID="65534" FmtStr="Proxy_%ld" Hidden="1" ReadOnly="0" />
+  </Templates>
+  <Prefix Value="" />
+</JetView-ObjectTemplates>

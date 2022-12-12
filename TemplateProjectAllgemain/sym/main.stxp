@@ -1,0 +1,32 @@
+Var
+	in	:Bool;
+	ra	:T_Rampe;
+	x,y	:real;
+	trig1	:T_Trig;
+	trig2	:T_Trig;
+	ton1	:T_Ton;
+	tof1	:T_Tof;
+	fname	:File;
+	s_daten	:string;
+	trace_aktiv	:bool;
+	dt1	:float;
+	i:int;
+End_Var
+
+
+
+Task Task_Main Loop Delay(MainLoopDelay);
+//Eingänge
+
+//Logik
+y:=ra.Value(in, t#5s);
+x:=dt1;
+
+//ausgänge
+	dt1:=(@102913*60+@102912)*60+@102911+@102910/1000.0;
+	s_daten:=Strformat('%1.9f;%1.3f$n',dt1,y);
+	if trace_aktiv then
+		FilePutString(fname,s_daten);
+	end_if
+
+End_Loop End_Task

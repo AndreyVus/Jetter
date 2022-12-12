@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JetView-Layout ProductVersion="5.5.1.4367">
+  <Item guid="603829da-a7d9-48f1-9ef8-6cd8a766d8d0">
+    <JetViewSoftSerializer Name="JetSelectTagOrVariableUITypeEditor">
+      <Property Name="EditorHeight">280</Property>
+      <Property Name="EditorWidth">395</Property>
+    </JetViewSoftSerializer>
+  </Item>
+</JetView-Layout>

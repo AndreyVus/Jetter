@@ -1,0 +1,417 @@
+#ifndef ohne_CAN
+#Define Heartbeat(CanNo,id) Delay(t#20ms);Regs[400228+1000*CanNo+id]
+Type
+	TCanNo	:Enum(Can1, Can2);
+	TNodeID	:Enum(Controller = 0x20, E30 = 0x30, Display = 0x40, Hydrotechnik = 0x8);
+	TAusgang:Enum(PWM = 0, PWMi = 1);	
+End_Type
+#endif
+
+
+
+Function Min(a:Real, b:Real) :Real
+	If a<b Then Min:=a Else Min:=b End_If
+End_Function
+
+
+
+Function Max(a:Real, b:Real) :Real
+	If a>b Then Max:=a Else Max:=b End_If
+End_Function
+
+
+
+Type
+	T_Trig:
+	Class
+		p1,n1 :Bool;
+		Public
+			Function P(x :Bool) :Bool;
+			Function N(x :Bool) :Bool;
+	End_Class
+End_Type
+Function T_Trig.P(x :Bool) :Bool
+	P := x And Not p1;
+	p1 := x;
+End_Function
+Function T_Trig.N(x :Bool) :Bool
+	N := Not x And n1;
+	n1 := x;
+End_Function
+
+
+
+Type
+	T_Ton:
+	Class
+		tr :T_Trig;
+		ti :Timer;
+		Public
+			Function Q(b :Bool, PT) :Bool;
+			Function ET();
+	End_Class
+End_Type
+Function T_Ton.Q(b :Bool, PT) :Bool
+	Q := False;
+	If tr.P(b) Then
+		TimerStart(ti, PT);
+	Else_If b Then
+		If TimerEnd(ti) Then
+			Q := True;
+		End_If
+	End_If
+End_Function
+Function T_Ton.ET()
+	ET := TimerValueActual(ti);
+End_Function
+
+
+
+Type
+	T_Tof:
+	Class
+		tr :T_Trig;
+		ti :Timer;
+		Public
+			Function Q(b :Bool, PT) :Bool;
+			Function ET();
+	End_Class
+End_Type
+Function T_Tof.Q(b :Bool, PT) :Bool
+	Q := True;
+	If tr.N(b) Then
+		TimerStart(ti, PT);
+	Else_If Not b Then
+		If TimerEnd(ti) Then
+			Q := False;
+		End_If
+	End_If
+End_Function
+Function T_Tof.ET()
+	ET := TimerValueActual(ti);
+End_Function
+
+
+
+#Define AM _Application.ActiveMask
+Type
+	T_RotaryEncoder:
+	Class
+		rt :T_Trig;
+		Public
+			Value :Int;
+			Function Set(x, a, b, hmiMaske);
+			Function Gedruckt() :Bool;
+			Function Gedreht() :Bool;
+	End_Class
+End_Type
+Function T_RotaryEncoder.Gedruckt()	:Bool
+	Gedruckt := rt.P(Regs[363001].0);
+End_Function
+Function T_RotaryEncoder.Gedreht()	:Bool
+	Gedreht := @363000<>Value;
+	Value := @363000;
+End_Function
+Function T_RotaryEncoder.Set(x, a, b, hmiMaske)
+	@363002 := a;
+	@363003 := b;
+	@363000 := x;
+	AM := hmiMaske;
+End_Function
+Var RotaryEncoder:T_RotaryEncoder;End_Var
+
+
+
+Function Scale(x :Real, xmin :Real, xmax :Real, ymin :Real, ymax :Real) :Real
+	Scale := (x - xmin)*(ymax - ymin)/(xmax - xmin) + ymin;
+End_Function
+
+
+
+Function ImBereich(x :Real, a :Real, b :Real) :Bool
+	ImBereich := (a<=x) And (x<=b);
+End_Function
+
+
+
+Function LowFilter(ist :&Real, soll :Real, f :Real)
+	@ist += f * (soll - @ist);
+End_Function
+
+
+
+Function VisuCmdStringIf(TextObj, wenn :Bool, ja :String, nein :String)
+	If wenn Then
+		VisuCmdString(TextObj, ja);
+	Else
+		VisuCmdString(TextObj, nein);
+	End_If
+End_Function
+
+
+
+Function VisuCmdAttributeIf(TextObj, wenn :Bool, ja, nein)
+	If wenn Then
+		VisuCmdAttribute(TextObj, TEXT_ATTR_FONTATTRIBUTE, ja);
+	Else
+		VisuCmdAttribute(TextObj, TEXT_ATTR_FONTATTRIBUTE, nein);
+	End_If
+End_Function
+
+
+
+(*Rampe		Ein -> Value steigt zu 1 // Aus -> Value sinkt zu 0
+Var ra:T_Rampe;y:real;End_Var
+y:=ra.Value(in, t#5s);*)
+Type
+	T_Rampe:
+	Class
+		PT :Int;
+		ti :Timer;
+		tr :T_Trig;
+		Public
+			Function Value(Ein :Bool, Zeit) :Real;
+			Function Ende() :Bool;
+	End_Class
+End_Type
+Function T_Rampe.Value(Ein :Bool, Zeit) :Real
+	if tr.P(Ein) or tr.N(Ein) then
+		PT := Zeit;
+		TimerStart(ti, Zeit-TimerValueActual(ti));
+	end_if
+	if Ein then
+		Value := 1-TimerValueActual(ti)/(PT+0.1);
+	else
+		Value := TimerValueActual(ti)/(PT+0.1);
+	end_if
+End_Function
+Function T_Rampe.Ende() :Bool
+	Ende := TimerEnd(ti);
+End_Function
+
+
+
+Function Inv(x :&Bool)
+	@x := ! @x;
+End_Function
+
+
+
+Function rs(Q:&bool, on:bool, off:bool)
+	@Q := (@Q || on) && ! off;
+End_Function
+
+
+
+Function Toggle(Q:&bool, Button:bool)
+Var
+	trig1	:T_Trig;
+End_Var;
+	If trig1.P(Button) then
+		@Q := ! @Q;
+	End_If
+End_Function;
+
+
+
+//tabellarische Approximation mit Dihotomie
+//var
+//	xy:array[11] of struct
+//		x:real;
+//		y:real;
+//	end_Struct;
+//end_var
+//function tab_xy(x:real,a,b):real
+//var i:int;end_var
+//	while b-a>1 do
+//		i:=round((a+b)/2);
+//		if x<xy[i].x then
+//			b:=i;
+//		else
+//			a:=i;
+//		end_if
+//	end_while
+//	tab_xy:=scale(x,xy[a].x,xy[b].x,xy[a].y,xy[b].y);
+//end_function
+//for i:=0 to 10 do
+//	xy[i].x:=i;
+//	xy[i].y:=i;
+//end_for
+//y:=tab_xy(x,0,10);
+
+
+
+#define nill 0
+#define EditLaenge 20
+Type
+	T_Edit:
+	Class
+		_pWert	:&Real;
+		_Real	:Array[3] Of Real;
+		_Int	:Array[4] Of Int;
+		_s,
+		_format	:String;
+		Public
+			Function Init(TextObj,pWert:&Real,ymin:Real,ymax:Real,step:Real,format:String);
+			Function Aktiv(KeyCode) :Bool;
+			Function Ende();
+	End_Class
+End_Type
+Function T_Edit.Init(TextObj,pWert:&Real,ymin:Real,ymax:Real,step:Real,format:String)
+	_MenuEdit.Value := 1;
+	_Int[0] := @363000;//rev
+	_Int[1] := TextObj;
+	_Int[2] := @363002;//rev min
+	_Int[3] := @363003;//rev max
+	_pWert := pWert;
+	if _pWert==nill then
+		VisuCmdGetString(_Int[1], &_s, EditLaenge);
+		_Real[0] := strtofloat(_s);
+	else
+		_Real[0] := @pWert;
+	end_if
+	@363002 := 0;//xmin
+	@363003 := (ymax-ymin)/step;//xmax
+	@363000 := (_Real[0]-ymin)/step;//x
+	_Real[1] := ymin;
+	_Real[2] := ymax;
+	_format := format;
+End_Function
+Function T_Edit.Ende()
+	_MenuEdit.Value := 0;
+	@363002 := _Int[2];
+	@363003 := _Int[3];
+	@363000 := _Int[0];
+End_Function
+Function T_Edit.Aktiv(KeyCode) :Bool
+	Aktiv := Bool(_MenuEdit.Value);
+	If Aktiv Then
+		Case KeyCode Of
+			KEY_SPACE:
+				Ende();
+			Break
+			KEY_ESCAPE:
+				if _pWert == nill then
+					VisuCmdString(_Int[1], _s);
+				else
+					@_pWert := _Real[0];
+				end_if
+				Ende();
+			Break
+			0:
+				if _pWert == nill then
+					VisuCmdString(_Int[1], Strformat(_format, Scale(@363000, 0, @363003, _Real[1], _Real[2])));
+				else
+					@_pWert := Scale(@363000, 0, @363003, _Real[1], _Real[2]);
+					VisuCmdString(_Int[1], Strformat(_format, @_pWert));
+				end_if
+			Break
+		End_Case
+	Else_if AM != hmi_settings then
+		_MenuPos.Value := @363000;
+	End_If
+End_Function
+Var Edit:T_Edit;End_Var
+
+
+
+Type
+	idx:Enum(
+		//ParameterListIndex
+		a,b,c,d,e,f,g,h,i,j,k,
+		LogoZeit,
+		Version
+	);
+	T_Settings:
+	Class
+		Sprache,
+		Beleuchtung	:Int;
+		Function Einf(i:idx,a:String,b:String,c:String,d:Real,e:Real,f:Real,g:Real);
+		Public
+			Function Beleuchtung_Aus();
+			Function Beleuchtung_Ein();
+			Function Beleuchtung_Get();//0..255
+			Function Beleuchtung_Set(x);//0..255
+			Function Init(Version:string);
+			Function Sprache_Get();
+			Function Sprache_Set(x);
+			Function Tab(i:idx);//Tabelle zeigen
+			Bezeichner	:Array [idx.Version] Of String[30];
+			Beschreibung:Array [idx.Version+1] Of String[50];
+			Einheit		:Array [idx.Version] Of String[10];
+			Wert,
+			Wertmin,
+			Wertmax,
+			Wertstep	:Array [idx.Version] Of Real;
+	End_Class
+End_Type
+Function T_Settings.Init(Version:string)
+	VisuCmdString(Text_Version, Version);
+	if Version=='' || Version<>Beschreibung[idx.Version] then
+		if Version<>'' then
+			Beschreibung[idx.Version]:=Version;
+		end_if
+		//ParameterList init
+		Einf(idx.a,'a','','', 0, 0,10,1);
+		Einf(idx.b,'b','','', 0, 0,10,1);
+		Einf(idx.c,'c','','', 0, 0,10,1);
+		Einf(idx.d,'d','','', 0, 0,10,1);
+		Einf(idx.e,'e','','', 0, 0,10,1);
+		Einf(idx.f,'f','','', 0, 0,10,1);
+		Einf(idx.g,'g','','', 0, 0,10,1);
+		Einf(idx.h,'h','','', 0, 0,10,1);
+		Einf(idx.i,'i','','', 0, 0,10,1);
+		Einf(idx.j,'j','','', 0, 0,10,1);
+		Einf(idx.k,'k','','', 0, 0,10,1);
+		Einf(idx.LogoZeit,'LogoZeit','Anzeigezeit','ms', 2000, 500,3000,500);
+	end_if
+	Tab(0);
+	@365100 := Sprache;
+	Beleuchtung_set(255);
+End_Function
+Const TabId0=8013;rowMitte=5;rowEnd=9;End_Const//0..5..9
+Function T_Settings.Tab(i:idx)
+	Var	start,row,tabId,sr:int;End_Var
+	start := Max(0, Min( idx.Version-rowEnd-1, i-rowMitte ));
+	_MenuPos.Value := i-start;
+	For row:=0 To rowEnd Do
+		tabId := 5*row+TabId0;
+		sr := start+row;
+		VisuCmdNumericValue(tabId, sr+1);
+		VisuCmdString(tabId+1, Bezeichner[sr]);
+		VisuCmdString(tabId+2, Beschreibung[sr]);
+		VisuCmdString(tabId+3, StrFormat('%1.2f',Wert[sr]));
+		VisuCmdString(tabId+4, Einheit[sr]);
+	End_For
+End_Function
+Function T_Settings.Einf(i:idx,a:String,b:String,c:String,d:Real,e:Real,f:Real,g:Real)
+	Bezeichner[i]:=a;Beschreibung[i]:=b;Einheit[i]:=c;
+	//if ! ImBereich(Wert[i],e,f) then
+		Wert[i]:=d;
+	//end_if
+	Wertmin[i]:=e;Wertmax[i]:=f;Wertstep[i]:=g;
+End_Function
+Function T_Settings.Sprache_Set(x)
+	Sprache := x;
+	@365100 := Sprache;
+End_Function
+Function T_Settings.Sprache_Get()
+	Sprache_Get := @365100;
+End_Function;
+Function T_Settings.Beleuchtung_Aus()
+	@364000 := 0;
+	@364001 := 0;
+End_Function
+Function T_Settings.Beleuchtung_Ein()
+	@364000 := Beleuchtung;
+	@364001 := Beleuchtung;
+End_Function
+Function T_Settings.Beleuchtung_Set(x)
+	Beleuchtung := x;
+	@364000 := Beleuchtung;
+	@364001 := Beleuchtung;
+End_Function
+Function T_Settings.Beleuchtung_Get()
+	Beleuchtung_Get := @364000;
+End_Function
+Var Settings:T_Settings At %RL 1000000;key:int;End_Var

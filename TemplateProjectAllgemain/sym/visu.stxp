@@ -1,0 +1,113 @@
+sub view_logo
+	Settings.Beleuchtung_Ein();
+	delay(int(settings.Wert[idx.LogoZeit]));
+	Taskrestart Task_Main;
+	RotaryEncoder.Set(0,0,0, hmi_1003);
+End_Sub
+sub Key_logo
+End_sub
+
+
+sub view_1003
+	VisuCmdString(text_rampe, Strformat('%1.3f', y));
+	VisuCmdStringIf(text_timer, ra.Ende(), 'Ende', 'im Gang');
+	VisuCmdStringIf(Text_in, in, 'in=1', 'in=0');
+	VisuCmdStringIf(Text_t1p, trig1.P(in), 'trig1.P=1', 'trig1.P=0');
+	VisuCmdStringIf(Text_t1, trig1.N(in), 'trig1.N=1', 'trig1.N=0');
+	VisuCmdString(text_rampe, Strformat('%1.3f', y));
+	VisuCmdStringIf(text_timer, ra.Ende(), 'Ende', 'im Gang');
+	VisuCmdStringIf(Text_in, in, 'in=1', 'in=0');
+	VisuCmdStringIf(Text_t2, trig2.N(in), 'trig2.N=1', 'trig2.N=0');//man darf trigger Funktion nur einmal aufrufen.
+	VisuCmdStringIf(Text_t3, trig2.N(in), 'trig2.N2=1', 'trig2.N2=0');//<-- hier ist Antwort immer 0
+	VisuCmdStringIf(Text_tonQ, ton1.Q(in, t#5s), 'ton1.Q=1', 'ton1.Q=0');
+	VisuCmdStringIf(Text_tofQ, tof1.Q(in, t#5s), 'tof1.Q=1', 'tof1.Q=0');
+	VisuCmdStringIf(Text_tonQ, ton1.Q(in, t#5s), 'ton1.Q=1', 'ton1.Q=0');
+	VisuCmdStringIf(Text_tofQ, tof1.Q(in, t#5s), 'tof1.Q=1', 'tof1.Q=0');
+End_Sub
+sub Key_1003
+	case key of
+		KEY_F1:
+			in := True;
+		Break
+		KEY_F2:
+			in := False;
+		Break
+		KEY_F3:
+			If FileOpen(fname,'/Data/Test.csv',fWrite) then
+				Trace('Open file ! $n');
+				trace_aktiv:=true;
+			else
+				Trace('fo ');
+			End_If
+		Break
+		KEY_F4:
+			If FileClose(fname) Then
+				Trace('File closed!$n');
+				trace_aktiv:=false;
+			else
+				Trace('fc ');
+			End_If
+		Break
+		KEY_F5:
+			RotaryEncoder.Set(0,0,0, hmi_aus);
+		Break
+		KEY_F6:
+			RotaryEncoder.Set(0,0,idx.Version-1, hmi_settings);
+		Break
+	End_Case
+End_sub
+
+
+
+sub view_settings
+End_Sub
+sub Key_settings
+	case key of
+		0:
+			settings.tab(RotaryEncoder.Value);
+		Break
+		KEY_SPACE:
+			Edit.Init(5*_MenuPos.Value+TabId0+3,
+				&Settings.Wert[RotaryEncoder.Value],
+				Settings.Wertmin[RotaryEncoder.Value],
+				Settings.Wertmax[RotaryEncoder.Value],
+				Settings.Wertstep[RotaryEncoder.Value],'%1.2f');
+		Break
+		KEY_F5:
+			RotaryEncoder.Set(0,0,0, hmi_aus);
+		Break
+		KEY_HOME:
+			RotaryEncoder.Set(0,0,1, hmi_1003);
+		Break
+	End_Case
+End_sub
+
+
+
+sub view_aus
+	if Settings.Beleuchtung_get()>0 then
+		Settings.Beleuchtung_Aus();
+		Taskbreak Task_Main;
+	end_if
+End_Sub
+sub Key_aus
+	case key of
+		KEY_F5:
+			RotaryEncoder.Set(0,0,0, hmi_logo);
+		Break
+	End_Case
+End_sub
+
+
+
+Function OnKeyUp(KeyCode, Flags)
+End_Function
+Function OnKeyDown(KeyCode, Flags)
+	If not Edit.Aktiv(KeyCode) Then
+		key := KeyCode;
+		call AM-1000 of key_logo, key_settings, key_aus, key_1003;
+	end_if
+End_Function
+Task Takt_1Hz Priority TaskPrioHigher Loop Delay(t#1s);
+	call AM-1000 of view_logo, view_settings, view_aus, view_1003;
+End_Loop End_Task

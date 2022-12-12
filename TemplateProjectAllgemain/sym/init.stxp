@@ -1,0 +1,68 @@
+//#Define	Ohne_Display
+//#Define	ohne_CAN
+#Define	ohne_E30
+#Define VisuLoopDelay t#250ms
+#Define MainLoopDelay t#50ms
+
+
+
+#Include "..\vis\STX\VisualInterface.stxp"
+#Include "ClassSettings.stxp"
+#Include "main.stxp"
+#Include "visu.stxp"
+
+
+
+Task task_visu Autorun
+	Settings.Init('SW Version: 01.01$nBuild Juni 2022');
+
+	/////////////////////////////////////////////////////////////////
+	// initialise CAN function of Controller
+#ifndef ohne_CAN
+	//CanOpenInit(TCanNo.Can1,TNodeID.Display,'V01.00.0.00');
+	CanOpenInit(TCanNo.Can2,TNodeID.Display,'V01.00.0.00');
+
+	//Sollwert,Temp,Druck --> CAN
+	CanOpenAddPDOTx(
+		TCanNo.Can2,						// Nummer der Busleitung
+		CANOPEN_PDO1_TX(TNodeID.Hydrotechnik),// CANID
+		0,									// BytePos
+		CANOPEN_REAL,						// DataType CANOPEN_INTEGER32 CANOPEN_DWORD
+		sizeof(x),							// DataLength
+		x,									// VarAddr
+		3000,								// Event-Zeit,ms
+		100,								// Inhibit-Zeit,ms
+		CANOPEN_ASYNCPDO | CANOPEN_NORTR);	// Paramset
+	CanOpenAddPDOTx(
+		TCanNo.Can2,						// Nummer der Busleitung
+		CANOPEN_PDO1_TX(TNodeID.Hydrotechnik),// CANID
+		sizeof(x),							// BytePos
+		CANOPEN_REAL,						// DataType
+		sizeof(y),							// DataLength
+		y,									// VarAddr
+		3000,								// Event-Zeit,ms
+		100,								// Inhibit-Zeit,ms
+		CANOPEN_ASYNCPDO | CANOPEN_NORTR);	// Paramset
+
+	// alle Teilnehmer am Bus
+	//CanOpenSetCommand(TCanNo.Can1, CAN_CMD_NMT, CAN_CMD_NMT_Value(CAN_CMD_NMT_ALLNODES, CAN_NMT_OPERATIONAL));
+	CanOpenSetCommand(TCanNo.Can2, CAN_CMD_NMT, CAN_CMD_NMT_Value(CAN_CMD_NMT_ALLNODES, CAN_NMT_OPERATIONAL));
+	//Hearbeat
+	//Heartbeat(TCanNo.Can1,TNodeID.Hydrotechnik):=1000;//ms
+	//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#EndIf
+	
+	//Ausgang := 0;
+	
+	Taskrestart Takt_1Hz;
+	Loop Delay(VisuLoopDelay);
+		#ifndef ohne_Display
+			If RotaryEncoder.Gedruckt() Then
+				OnKeyDown(KEY_SPACE,0);
+			End_If
+		#endif
+		If RotaryEncoder.Gedreht() Then
+			OnKeyDown(0,0);
+		End_If
+	End_Loop
+End_Task

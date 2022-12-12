@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JetViewSoft-DefaultObjects Version="3.0" ProductVersion="5.5.1.4367" RelatedObjectPool=".\vis.jop">
+	<Objects>
+		<Object Class="COutputText">
+			<Objects>
+				<Object Class="CLineStyle" JVS-ID="25003" ObjectName="grau1"/>
+				<Object Class="CFillStyle" JVS-ID="26000" ObjectName="keine"/>
+				<Object Class="CFontStyle" JVS-ID="24003" ObjectName="ab8sw"/>
+			</Objects>
+		</Object>
+		<Object Class="GraphicObject">
+			<Objects>
+				<Object Class="CLineStyle" JVS-ID="25000" ObjectName="sw0"/>
+				<Object Class="CFillStyle" JVS-ID="26001" ObjectName="grau"/>
+			</Objects>
+		</Object>
+	</Objects>
+</JetViewSoft-DefaultObjects>

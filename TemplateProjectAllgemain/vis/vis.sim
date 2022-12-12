@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<JetViewSoft-SimulationSettings Version="1.0" ProductVersion="5.5.1.4367">
+	<Selections>
+		<Selection DisplayName="JVM-104" SimulatedDisplay="JVM-104"/>
+		<Selection DisplayName="JVM104 8-Tasten" SimulatedDisplay="JVM104 8-Tasten"/>
+	</Selections>
+</JetViewSoft-SimulationSettings>
